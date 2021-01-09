@@ -1,7 +1,7 @@
 <div align="center">
 
 <h1>🧚‍♀️ Pixie</h1>
-<i>"It's like systemctl, but online"</i>   
+<i>"It's like systemctl, but online, and broken all the time"</i>   
   
 <code>com.abyssaldev.pixie</code>
 
