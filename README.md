@@ -31,6 +31,12 @@ Adapted from internal tooling at GalEdu.
 - Make your breakfast (do it yourself)
 - Run on Windows/Windows Server
 
+### The technical stuff
+Pixie's event supervisor (`pixie-ev`) is essentially a PubSub controller, where the method of communication is agnostic.
+Pixie works over HTTPS, WSS, raw UDP, or any method that you can implement. Payloads are sent as JSON objects compressed with zlib.
+Pixie clients tell the supervisor what kind of events they can receive (using a metadata approach), and as long as they stay alive
+(either through WS pings or HTTP traces), they are eligible to be selected by the Pixie supervisor to receive any given event.
+
 ### Example usage
 **CLI**
 ```console
@@ -89,4 +95,4 @@ Abyssal ain't responsible for data loss, system loss, mental instability, collap
 
 ### Copyright
 Copyright &copy; 2019-2021 Abyssal and contributors, under the [MIT License](LICENSE.md).  
-Aspects of Pixie's service mesh design are inspired by 
+Aspects of Pixie's service mesh design are heavily inspired by [신경](https://github.com/queer/singyeong).
