@@ -58,7 +58,7 @@ pixie-client-logs: beginning log follow for abyss-client
   "clients": {
     "abyss": {
       "name": "Abyss Pixie Client",
-      "description: "Abyss' managed instance on the Pixie platform",
+      "description": "Abyss' managed instance on the Pixie platform",
       "actions": {
         "start": {
           "depends": ["abyss-compile"],
