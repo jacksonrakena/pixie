@@ -82,6 +82,32 @@ pixie-client-logs: beginning log follow for abyss-client
 }
 ```
 
+### Key structure
+**Pixie DSN**  
+When using WebSockets, raw UDP, or another non-REST based transport, DSNs are expressed in the following format:
+```
+pixie://<host>[:port=11888]/<[socket,udp,custom]>
+``````
+When communicating over REST callbacks, DSNs are expressed as HTTPS URLs:
+```
+https://<host>[:port=11889]/pixie[?callback][&nonce][&id]
+```
+**Pixie Server-To-Client Payload**  
+When a Pixie daemon sends a response (or a new message) to a client, typical formatting looks like this:
+```json
+{
+  "__pixie_metadata": {
+    "version": "<daemon version>",
+    "id": "<daemon id>",
+    "name": "[name, if identified]",
+    "responseTime": "[Response time in milliseconds, if responding]",
+    "nonce": "[if relevant]",
+    "transport": "one of [socket, udp, rest], or custom-defined provider"
+ },
+ "data": {}
+}
+```
+Payloads are compressed with `zlib` on both S-C and C-S transactions.
 
 ### Who uses this? Why?
 (I don't really know why. For fun?)
